@@ -8,11 +8,11 @@ class AddExpenseScreen extends StatefulWidget {
   static String routeName = '/add-expense';
 
   @override
-  noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+  State<AddExpenseScreen> createState() => _AddExpenseScreenState();}
 
 
 
-class AddExpenseScreenState extends State<AddExpenseScreen> {
+class _AddExpenseScreenState extends State<AddExpenseScreen> {
 
   var form = GlobalKey<FormState>();
   String? purpose;
