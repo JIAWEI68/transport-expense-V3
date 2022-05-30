@@ -7,8 +7,8 @@ class AllExpenses with ChangeNotifier{
     return myExpenses;
   }
   void addExpense(purpose, mode, cost, travelDate) {
-    myExpenses.insert(0, Expense(purpose: purpose, mode: mode, cost: cost,
-        travelDate: travelDate));
+    myExpenses.insert(0, Expense(purpose: purpose!, mode: mode!, cost: cost!,
+        travelDate: travelDate!));
     notifyListeners();
   }
   void removeExpense(i) {
