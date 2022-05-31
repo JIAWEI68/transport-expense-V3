@@ -24,18 +24,18 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
     expenseList.addExpense(purpose, mode, cost, travelDate);
     bool isValid = form.currentState!.validate();
   }
-  void presentDatePicker(BuildContext context){
+
+  void presentDatePicker(BuildContext context) {
     showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime.now().subtract(const Duration(days:14)),
+      firstDate: DateTime.now().subtract(const Duration(days: 14)),
       lastDate: DateTime.now(),
-    ).then((value){
-      if(value==null) return;
+    ).then((value) {
+      if (value == null) return;
       setState(() {
         travelDate = value;
       });
-
     });
   }
 
@@ -45,10 +45,12 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Add Expense'),
-          actions: [
-            IconButton(onPressed: () { saveForm(expenseList); }, icon:
-            Icon(Icons.save))
-          ],
+        actions: [
+          IconButton(onPressed: () {
+            saveForm(expenseList);
+          }, icon:
+          Icon(Icons.save))
+        ],
       ),
       body: Container(
           padding: EdgeInsets.all(10),
@@ -65,23 +67,24 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
                     DropdownMenuItem(child: Text('MRT'), value: 'mrt'),
                     DropdownMenuItem(child: Text('Taxi'), value: 'taxi'),
                   ],
-                  validator: (value){
-                    if(value==null) {
+                  validator: (value) {
+                    if (value == null) {
                       return "Please provide a mode of transport.";
                     } else {
                       return null;
                     }
                   },
-                  onChanged: (value) {mode = value as String;},
+                  onChanged: (value) {
+                    mode = value as String;
+                  },
 
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(label: Text('Cost')),
-                  validator: (value){
-                    if(value==null) {
+                  validator: (value) {
+                    if (value == null) {
                       return "Please provide a travel cost.";
-
                     }
                     else if (double.tryParse(value) == null) {
                       return "Please provide a valid travel cost.";
@@ -89,7 +92,9 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
                       return null;
                     }
                   },
-                  onSaved: (value) {cost = double.parse(value!); },
+                  onSaved: (value) {
+                    cost = double.parse(value!);
+                  },
                 ),
                 TextFormField(
                   decoration: InputDecoration(label: Text('Purpose')),
@@ -101,17 +106,23 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
                     else
                       return null;
                   },
-                  onSaved: (value) {purpose = value;},
+                  onSaved: (value) {
+                    purpose = value;
+                  },
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(travelDate == null? 'No Date Chosen': "Picked Date: " +
+                    Text(travelDate == null
+                        ? 'No Date Chosen'
+                        : "Picked Date: " +
                         DateFormat('dd/MM/yyyy').format(travelDate!)),
                     TextButton(
                         child: Text('Choose Date', style: TextStyle(fontWeight:
                         FontWeight.bold)),
-                        onPressed: () {presentDatePicker(context);} ),
+                        onPressed: () {
+                          presentDatePicker(context);
+                        }),
                   ],
                 ),
 
@@ -121,7 +132,7 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
           )
       ),
     );
-    }
+  }
 }
 
 

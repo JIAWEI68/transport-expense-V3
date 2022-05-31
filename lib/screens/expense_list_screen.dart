@@ -12,7 +12,7 @@ class ExpenseListScreen extends StatelessWidget {
     AllExpenses expenseList = Provider.of<AllExpenses>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Expense List'),
+        title: Text('My Expenses'),
       ),
       body: Container(
         alignment: Alignment.center,
