@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "314441944590",
+    "project_id": "travel-expenses-f5be2",
+    "storage_bucket": "travel-expenses-f5be2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314441944590:android:3b7dcf2923c5e68cffb65f",
+        "android_client_info": {
+          "package_name": "com.example.transport_expense_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314441944590-si6gmqd4gc5q09jkk6cvh5mcgssikkvv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzGcbk3Rc_OCVVh_w-Bt_dGQuU18yLWK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314441944590-si6gmqd4gc5q09jkk6cvh5mcgssikkvv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

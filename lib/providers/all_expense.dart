@@ -6,9 +6,9 @@ class AllExpenses with ChangeNotifier{
   List<Expense> getMyExpenses() {
     return myExpenses;
   }
-  void addExpense(purpose, mode, cost, travelDate) {
-    myExpenses.insert(0, Expense(purpose: purpose!, mode: mode!, cost: cost!,
-        travelDate: travelDate!));
+  void addExpense(id, purpose, mode, cost, travelDate) {
+    myExpenses.insert(0, Expense(purpose: purpose, mode: mode, cost: cost,
+        travelDate: travelDate, id: id));
     notifyListeners();
   }
   void removeExpense(i) {
